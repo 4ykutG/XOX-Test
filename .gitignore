@@ -1,0 +1,32 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Sanal Ortamlar (Virtual Environments) ---
+venv/
+xox_venv/
+env/
+.venv/
+.env/
+
+# --- IDE ve Editör Ayarları ---
+# VS Code ayarları (kişisel ayarların gitmesi gerekmez)
+.vscode/
+# PyCharm kullanırsan diye
+.idea/
+
+# --- İşletim Sistemi Dosyaları ---
+# Mac
+.DS_Store
+# Windows
+Thumbs.db
+Desktop.ini
+
+# --- Dağıtım ve Build (İleride exe yaparsan) ---
+build/
+dist/
+*.spec
+
+# --- Log Dosyaları ---
+*.log
