@@ -1,6 +1,6 @@
 # ❌⭕ XOX Oyunu ve Test Dokümantasyonu
 
-**Ders:** YZM 3111 - Yazılım Testi  
+**Ders:** YZM 3111 - Yazılım Test  
 **Proje:** XOX (Tic-Tac-Toe) Oyunu Test Otomasyonu ve Raporlama
 
 Bu proje, YZM 3111 dersi kapsamında geliştirilmiş; **Birim (Unit)** ve **Entegrasyon** test süreçleri uygulanarak güvenilirliği doğrulanmış bir XOX oyunudur.
