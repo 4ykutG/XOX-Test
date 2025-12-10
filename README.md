@@ -1,101 +1,74 @@
-# Neon XOX: Modern Ağ Tabanlı Tic-Tac-Toe 🎮
+# ❌⭕ XOX Oyunu ve Test Dokümantasyonu
 
-![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
-![Pygame](https://img.shields.io/badge/Game_Engine-Pygame-yellow.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+**Ders:** YZM 3111 - Yazılım Testi  
+**Proje:** XOX (Tic-Tac-Toe) Oyunu Test Otomasyonu ve Raporlama
 
-**Neon XOX**, klasik Tic-Tac-Toe (XOX) oyununu modern neon grafikler, gölge efektleri ve gelişmiş ağ altyapısı ile yeniden yorumlayan bir Python projesidir. Pygame kütüphanesi kullanılarak geliştirilmiştir.
-
-![Oyun Ekran Görüntüsü](https://via.placeholder.com/800x450?text=Neon+XOX+Ekran+Goruntusu)
-*(Oyun içi ekran görüntüsünü buraya ekleyebilirsiniz)*
-
-## ✨ Temel Özellikler
-
-* **3 Farklı Oyun Modu:**
-    1.  🧠 **Bilgisayara Karşı (AI):** Yapay zekaya karşı oynayarak strateji geliştirin.
-    2.  👥 **Yerel (2 Kişi):** Aynı bilgisayarda arkadaşınızla karşılıklı oynayın.
-    ![Neon XOX Oynanış](assets/gameplay.png)
-    3.  🌐 **Ağ Oyunu (LAN):** Yerel ağ üzerindeki iki farklı bilgisayarda gerçek zamanlı kapışın.
-    ![Neon XOX Oynanış](assets/lan_gameplay.png)
-* **Modern Görsel Tasarım:**
-    * Gradyan (renk geçişli) arka planlar.
-    * Neon efektli ızgara ve semboller.
-    * Gölgelendirilmiş butonlar ve metinler.
-* **⏳ Rekabetçi Süre Sınırı:** Her hamle için 10 saniye süreniz var! Süre dolarsa oyunu kaybedersiniz.
-* **Bekleme Odası:** LAN modunda rakip bağlanana kadar sunucu bekleme ekranında kalır.
-
-## 🛠️ Kurulum
-
-Projeyi bilgisayarınızda çalıştırmak için Python 3 ve Pygame gereklidir.
-
-1.  **Repoyu Klonlayın:**
-    ```bash
-    git clone [https://github.com/kullaniciadi/neon-xox.git](https://github.com/kullaniciadi/neon-xox.git)
-    cd neon-xox
-    ```
-
-2.  **Sanal Ortamı Oluşturun (Önerilen):**
-    * *Windows:*
-        ```bash
-        python -m venv venv
-        .\venv\Scripts\Activate.ps1
-        ```
-    * *macOS / Linux:*
-        ```bash
-        python3 -m venv venv
-        source venv/bin/activate
-        ```
-
-3.  **Gereksinimleri Yükleyin:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Oyunu Başlatın:**
-    ```bash
-    python main.py
-    ```
-
-## 🎮 Nasıl Oynanır?
-
-### Kontroller
-* **Fare:** Menü seçimi ve hamle yapmak için sol tık.
-* **ESC:** Oyunu sıfırlayıp ana menüye dönmek için.
-* **R:** Oyun bittiğinde hızlıca yeniden başlatmak için.
-
-### 🌐 LAN (Ağ) Modu Nasıl Kullanılır?
-
-İki farklı bilgisayarın aynı Wi-Fi veya kablolu ağa bağlı olduğundan emin olun.
-
-1.  **Sunucu (Host) Bilgisayar:**
-    * Oyunu açın -> **Ağ Oyunu (LAN)** seçeneğine tıklayın.
-    * Konsol penceresine geçin ve **`1`** (Oyunu Kur) seçeneğini seçin.
-    * Ekranda *"Rakip Bağlanması Bekleniyor..."* yazısı çıkacaktır.
-
-2.  **İstemci (Client) Bilgisayar:**
-    * Oyunu açın -> **Ağ Oyunu (LAN)** seçeneğine tıklayın.
-    * Konsol penceresine geçin ve **`2`** (Oyuna Katıl) seçeneğini seçin.
-    * Sunucunun yerel IP adresini girin (Varsayılan `127.0.0.1` ise boş geçin, farklıysa `192.168.1.X` formatında girin).
-
-3.  Bağlantı sağlandığında oyun her iki ekranda da otomatik başlar!
-
-## 📂 Dosya Yapısı
-
-Proje modüler bir mimari kullanır:
-
-* `main.py`: Oyunun giriş noktası, çizim döngüsü ve durum yönetimi.
-* `game_engine.py`: Oyun kuralları, hamle kontrolü ve kazanma mantığı.
-* `network_manager.py`: Socket programlama, veri transferi ve bağlantı yönetimi.
-* `ai_bot.py`: Bilgisayar rakibinin mantığı.
-* `constants.py`: Renkler, boyutlar, ayarlar ve sabitler.
-
-## 🤝 Katkıda Bulunma
-
-Projeye katkıda bulunmak isterseniz:
-1.  Fork yapın.
-2.  Yeni bir özellik dalı (feature branch) oluşturun.
-3.  Değişikliklerinizi commit edin.
-4.  Pull Request gönderin.
+Bu proje, YZM 3111 dersi kapsamında geliştirilmiş; **Birim (Unit)** ve **Entegrasyon** test süreçleri uygulanarak güvenilirliği doğrulanmış bir XOX oyunudur.
 
 ---
-*İyi Eğlenceler!* 🚀
+
+## 📸 Proje ve Test Görselleri
+
+Projenin çalışma anına ve test süreçlerine ait görseller aşağıdadır.
+
+### 1. Test Senaryosu Tasarımı (Test Case Design)
+Oyun alanının oluşturulması ve oyun akışının doğrulanması için hazırlanan test senaryosu örneği:
+
+![Test Case Tablosu](./testcase.jpg)
+*(Yukarıdaki görsel, projenin Risk Seviyesi, Girdiler ve Beklenen Çıktılarını içeren orijinal test dokümanıdır.)*
+
+### 2. Test Koşum Sonucu (Terminal Çıktısı)
+Yazılan test otomasyon kodunun (Python) çalıştırılması sonucu elde edilen "PASS" (Başarılı) tablosu:
+
+![Test Terminal Çıktısı](./assets/terminal_output.png)
+---
+
+## 🧪 Yazılım Test Süreçleri ve Kalite Güvencesi (QA)
+
+Test sürecinde **LAN Modu** kapsam dışı bırakılmış, odak noktası **PvE (Yapay Zeka)** ve **Local PvP** modlarının kararlılığı üzerine yoğunlaşmıştır.
+
+### ✅ Özet Test Sonuç Tablosu
+
+Aşağıdaki tablo, proje kapsamında gerçekleştirilen test senaryolarının (Test Cases) özet sonuçlarını içermektedir.
+
+| Test ID | Mod | Senaryo | Risk | Beklenen Sonuç | Gerçekleşen Sonuç | Durum |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-01** | PvE | Bağlantı Kopması | Yüksek | Oyun durmalı, çıkış güvenli yapılmalı. | Oyun durduruldu, menüye dönüldü. | **PASS** |
+| **TC-02** | PvE | 10sn Süre Aşımı | Orta | Sıra otomatik olarak AI'ya geçmeli. | Sayaç sıfırlandı, sıra AI'ya geçti. | **PASS** |
+| **TC-03** | PvE | Kazanma Koşulu | Yüksek | Skor güncellenmeli, Win ekranı açılmalı. | Puan eklendi, tebrik ekranı geldi. | **PASS** |
+| **TC-04** | PvP | Bağlantı Kopması | Yüksek | Kalan oyuncu hükmen galip sayılmalı. | Kalan oyuncu galip ilan edildi. | **PASS** |
+| **TC-05** | PvP | 10sn Süre Aşımı | Orta | Sıra rakip oyuncuya devredilmeli. | Süre doldu, hak devredildi. | **PASS** |
+| **TC-06** | PvP | Kazanma Koşulu | Yüksek | Galibiyet ekranı doğru oyuncuya çıkmalı. | Doğru oyuncu için Win ekranı açıldı. | **PASS** |
+
+---
+
+## 🛠️ Detaylı Test Senaryoları (Test Cases)
+
+### 1. Bağlantı Kopması ve İstisna Yönetimi
+* **Amaç:** Oyun esnasında kullanıcının pencereyi kapatması durumunda oyunun çökmemesini sağlamak.
+* **Risk:** Yüksek
+* **Sonuç:** Sistem hatayı yakaladı ve ana menüye yönlendirme yaptı.
+
+### 2. 10 Saniye Kuralı (Zaman Aşımı Testi)
+* **Amaç:** Oyun akışının sürekliliğini sağlamak.
+* **Girdi:** Kullanıcı 10 saniye boyunca hamle yapmaz.
+* **Sonuç:** Zamanlayıcı 0'a ulaştığında sıra otomatik olarak karşı tarafa geçti.
+
+### 3. Kazanma ve Skor Doğrulama
+* **Amaç:** Oyunun mantıksal sonucunun doğruluğunu test etmek.
+* **Beklenen:** Yatay, dikey veya çapraz eşleşmede oyun bitmeli.
+* **Sonuç:** Algoritma kazananı doğru tespit etti.
+
+---
+
+## 🚀 Kurulum ve Test Çalıştırma
+
+Testleri kendi makinenizde simüle etmek için:
+
+```bash
+# Gerekli kütüphaneyi kurun
+pip install tabulate
+pip install pygame
+
+# Test senaryolarını çalıştırın
+python tests.py.py
